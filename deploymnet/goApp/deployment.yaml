@@ -15,7 +15,7 @@ spec:
         app: gitops-webapp
     spec:
       containers:
-      - image: registry.gitlab.com/andrew.kaczynski/gitops-webapp:1.0
+      - image: andrewkaczynski/gowebapp:1.0
         name: gitops-webapp
         ports:
         - containerPort: 5000
