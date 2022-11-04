@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-web-frontend
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gitops-nginx
+      app.kubernetes.io/name: gitopswebfrontend
+      name: frontend-mynginx
+  template:
+    metadata:
+      labels:
+        app: gitops-nginx
+        app.kubernetes.io/name: gitopswebfrontend
+        name: frontend-mynginx
+    spec:
+      containers:
+      - image: iamraj007/my-nginx:frontend
+        name: frontend-podnginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
