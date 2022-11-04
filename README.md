@@ -1,0 +1,2 @@
+# Argo-AppSet
+ArgoCD ApplicationSet
