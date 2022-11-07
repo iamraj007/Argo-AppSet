@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: gitops-webapp
-  name: gitops-webapp-svc
+  name: gitops-go-webapp-svc
 spec:
   ports:
   - port: 80
@@ -11,4 +11,4 @@ spec:
     protocol: TCP
     targetPort: 5000 
   selector:
-    app: gitops-webapp
+    app: gitops-go-webapp
