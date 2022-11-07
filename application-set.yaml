@@ -5,10 +5,6 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - vars:
-    - env: stage
-    - onwer: devops
-    - frontfacing: yes
   - git:
       # git repository to get the variables from
       repoURL: https://github.com/iamraj007/Argo-AppSet
@@ -20,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{path.basename}}-{{vars.env}}'
+      name: '{{path.basename}}'
     spec:
       project: assessment
       source:
@@ -34,6 +30,12 @@ spec:
         # different namespaces named after the directories names to be used as destinations
         namespace: dev
         #namespace: '{{path.basename}}'
+    directory:
+      jsonnet:
+        extVars:
+          - name: MyVar
+            value: ClusterVar01
+            code: true      
       syncPolicy:
         automated:
           prune: true
