@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: gitops-webapp
-  name: gitops-webapp
+  name: gitops-gowebapp
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - image: andrewkaczynski/gowebapp:1.0
-        name: gitops-webapp
+        name: gitops-go-webapp
         ports:
         - containerPort: 5000
           name: http
