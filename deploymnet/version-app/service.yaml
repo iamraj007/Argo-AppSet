@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: gitops-webnginx
-  name: gitops-webnginx-svc
+  name: gitops-verion-webnginx-svc
 spec:
   ports:
   - port: 80
