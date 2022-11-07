@@ -5,6 +5,10 @@ metadata:
   namespace: argocd
 spec:
   generators:
+  - vars:
+    - env: stage
+    - onwer: devops
+    - frontfacing: yes
   - git:
       # git repository to get the variables from
       repoURL: https://github.com/iamraj007/Argo-AppSet
@@ -16,7 +20,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-{{vars.env}}'
     spec:
       project: assessment
       source:
