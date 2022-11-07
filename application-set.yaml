@@ -25,17 +25,17 @@ spec:
         targetRevision: main
         # path to read manifests from, here it's the full path not only the name of the directory
         path: '{{path}}'
+        directory:
+          jsonnet:
+            extVars:
+              - name: MyVar
+                value: ClusterVar01
+                code: true
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
         namespace: dev
         #namespace: '{{path.basename}}'
-    directory:
-      jsonnet:
-        extVars:
-          - name: MyVar
-            value: ClusterVar01
-            code: true      
       syncPolicy:
         automated:
           prune: true
