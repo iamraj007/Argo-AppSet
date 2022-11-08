@@ -28,9 +28,13 @@ spec:
         directory:
           jsonnet:
             extVars:
-              - name: MyVar
+              - name: MyEnvVar
                 value: ClusterVar01
                 code: true
+              - name: MyDBVar
+                value: DB_URL
+                code: true
+                
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
