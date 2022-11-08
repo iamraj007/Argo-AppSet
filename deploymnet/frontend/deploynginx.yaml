@@ -18,7 +18,7 @@ spec:
         name: frontend-mynginx
     spec:
       containers:
-      - image: iamraj007/my-nginx:frontend
+      - image: iamraj007/my-nginx:backend
         name: frontend-podnginx
         ports:
         - containerPort: 80
